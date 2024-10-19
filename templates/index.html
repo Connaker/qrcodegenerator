@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>QR Code Generator 1.0</title>
+  <style>
+  html,body {
+    height:100%;
+    width:100%;
+    margin:0;
+  }
+  body , body {
+    display:flex;
+  }
+  form {
+    margin:auto;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    box-sizing: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  </style>
+</head>
+<body>
+  <form id="form" action="/generate" method="post">
+    <fieldset>
+      <legend>QR Code Generator</legend>
+      <input autocomplete="off" autofocus name="response" type="text" class="form-control" id="location-input" placeholder="Ex: https://www.example.com">
+      <button type="submit" class="btn btn-primary">Generate</button>
+    </fieldset>
+  </form>
+</body>
+</html>
