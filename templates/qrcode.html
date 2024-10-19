@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR Code Generator</title>
-  <style>
-  html,body {
-    height:100%;
-    width:100%;
-    margin:0;
-  }
-  body , body {
-    display:flex;
-  }
-  img {
-    margin:auto;
-    border-radius: 5px;
-  }
-  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      body,
+      body {
+        display: flex;
+      }
+      form {
+        margin: auto;
+        border-radius: 5px;
+      }
+
+      #qrimage {
+        height: 250px;
+        border-radius: 5px;
+        display: block;
+      }
+
+      .button {
+        padding: 6px, 12px;
+        margin: 0;
+        width: 100%;
+        font-weight: bold;
+      }
+    </style>
   </head>
-<body>
-    <img src="../static/qrcode.png">
-</body>
+  <body>
+    <form>
+      <img id="qrimage" src="../static/qrcode.png" />
+      <button class="button" type="button" data-download="qrimage">
+        Download
+      </button>
+      <script>
+        const downloadLinks = document.querySelectorAll("[data-download]");
+
+        downloadLinks.forEach((button) => {
+          const id = button.dataset.download;
+          const image = document.getElementById(id);
+          const a = document.createElement("a");
+
+          a.href = image.src;
+          a.download = "";
+          a.style.display = "none";
+
+          button.addEventListener("click", () => {
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          });
+        });
+      </script>
+    </form>
+  </body>
 </html>

@@ -1,13 +1,15 @@
 from flask import Flask, render_template, request
 import qrcode
 from qrcode.image.pure import PyPNGImage
-import requests 
+import requests
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/generate', methods=['POST'])
 def generate():
@@ -25,8 +27,7 @@ def generate():
         except:
             e = "Invalid URL. Please try again"
             return render_template('error.html', error=e)
-        
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)          
 
-    
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080, debug=True)
