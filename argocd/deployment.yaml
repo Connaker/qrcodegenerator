@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    argocd.argoporj.io/instance: qrcodeapp
+  name: qrcodeapp
+  namespace: qrcodeapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qrcodeapp
+  template:
+    metadata:
+      labels:
+        app: qrcodeapp
+    spec:
+      containers:
+        - image: >- 
+            432367782265.dkr.ecr.us-east-2.amazonaws.com/flask-qrcodeapp
+          name: qrcodeapp
+          ports:
+            - containerPort: 5000
+          resources:
+            limits:
+              cpu: "1"
+              memory: 512Mi
+            requests:
+              cpu: "0.2"
+              memory: 256Mi
+      imagePullSecrets:
+        - name: regcred
