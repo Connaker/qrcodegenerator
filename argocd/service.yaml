@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: qrcode
+  name: qrcodeapp
 spec:
   selector:
-    app: qrcode
+    app: qrcodeapp
   ports:
     - protocol: "TCP"
       port: 5000
