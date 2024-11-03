@@ -4,7 +4,7 @@ metadata:
   labels:
       argocd.argoproj.io/instance: qrcodeapp
   name: qrcodeapp
-  namespace: qrcodeapp
+  namespace: qrcode
 spec:
   replicas: 1
   selector:
