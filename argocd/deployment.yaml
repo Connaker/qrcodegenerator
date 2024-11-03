@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - image: >- 
-            432367782265.dkr.ecr.us-east-2.amazonaws.com/flask-qrcodeapp
+            432367782265.dkr.ecr.us-east-2.amazonaws.com/flask-qrcode
           name: qrcodeapp
           ports:
             - containerPort: 5000
