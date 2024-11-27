@@ -77,5 +77,5 @@ Locally: <br>
 
 ## Running on AWS
 
-> Alternatively, the program can be run on AWS using App Runner. There are two ways to do this. Using AppRunner yaml file or storing inside an AWS ECR. An example of using Apprunner yaml file can be found under the apprunner folder. It should be noted that the API key is stored in Systems Manager Parameter store. You will need to update the Apprunner file to pick up your key correctly or it will fail to run. If you like to use ECR, you can simply create your ECR and upload the Dockerfile to the ECR. Then in Apprunner, use the ECR option and point to your ECR repository.
+> Alternatively, the program can be run on AWS using App Runner. There are two ways to do this. Using AppRunner yaml file or storing inside an AWS ECR. An example of using Apprunner yaml file can be found under the apprunner folder. If you like to use ECR, you can simply create your ECR and upload the Dockerfile to the ECR. Then in Apprunner, use the ECR option and point to your ECR repository.
 
