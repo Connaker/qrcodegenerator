@@ -70,7 +70,7 @@ Locally: <br>
 4. Run docker image
 
    ```sh
-   docker run -d --name <app_name> -e API='API KEY' -p 5000:5000 <image_name>
+   docker run -d --name <app_name> -p 5000:5000 <image_name>
    ```  
 
 5. Open a browser and navigate to the IP address of the Docker container with port 5000.
